@@ -1,4 +1,13 @@
 Sww::Application.routes.draw do
+  get "pages/home"
+  get "pages/about"
+  get "pages/contact"
+  get "pages/blog"
+  
+  get "home", to: 'pages#home'
+  get "about", to: 'pages#about'
+  get "contact", to: 'pages#contact'
+  get "blog", to: 'pages#blog'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
