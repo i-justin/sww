@@ -6,14 +6,14 @@
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
   	<meta charset="utf-8" />
-
+  <%= favicon_link_tag 'favicon6.ico' %>
   	<!-- Uncomment to make IE8 render like IE7 -->
   	<!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "Something w/ Wood" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -21,55 +21,24 @@
   </head>
   <!-- Header and Nav -->
   <body class="wood-back">
-  	<nav class="top-bar"></nav>
+
+
+
+  
   <div class="row"> 
-      <div class="small-1 large-2 columns"><H3 ><a <%if @title=="About"%>  style="border-bottom: 4px solid #000000;"<%end%> href="about">About</a></H3></div>
-      <div class="large-2 columns"><H3>Shop</H3></div>
-      <div class="large-4 columns"><h1><a href="home"><%=image_tag "logo.png"%></a></h1></div>
-      <div class="large-3 columns"><H3><a <%if @title=="Contact"%>  style="border-bottom: 4px solid #000000;"<%end%> href="contact">Contact</a></H3></div>
-      <div class="small-3 large-1 columns"><h3><a <%if @title=="Blog"%>  style="border-bottom: 4px solid #000000;"<%end%> href="blog">Blog</a></h3></div>
+      <div class="small-1 large-2 columns"><H3 <%if @title=="About"%> class="selected"<%end%>><a href="about"><br/><br/>About</a></H3></div>
+      <div class="large-2 columns"><H3><br/><br/>Shop</H3></div>
+      <div class="large-4 columns"><h1><a href="home" ><%=image_tag "logo.png", {:width=>200}%></a></h1></div>
+      <div class="large-3 columns"><H3  <%if @title=="Contact"%> class="selected"<%end%>> <br/><br/><a href="contact">Contact</a></H3></div>
+      <div class="small-3 large-1 columns"><h3  <%if @title=="Blog"%> class="selected"<%end%>><br/><br/><a href="blog">Blog</a></h3></div>
       <br/><br/>
          <div ><h1><br/></h1>
     </div>
     </div>
   </div>
  
-  <!-- End Header and Nav -->
- 
- 
-  <!-- First Band (Image) -->
- 
 
-  <!-- Second Band (Image Left with Text) -->
- 
-  <div class="row">
-    <div class="large-4 columns panel-2">
-    	      <%=image_tag "sample1.png"%>
-    </div>
-    <div class="large-8 columns">
-      <div class="panel">
-      <h4>This is a content section.</h4>
-      </div>
-    </div>
-  </div>
- 
- 
-  <!-- Third Band (Image Right with Text) -->
- 
-  <div class="row">
-    <div class="large-8 columns">
-      <h4>This is a content section.</h4>
- 
-      <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
- 
-      <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
- 
-    </div>
-    <div class="large-4 columns">
-      <img src="http://placehold.it/400x300&text=[img]">
-    </div>
-  </div>
- 
+   <%= yield %>
  
   <!-- Footer -->
  
@@ -91,28 +60,7 @@
       </div>
     </div>
   </footer>
-
-
-  	<nav class="top-bar"></nav>
-  <ul class="title-area">
-    <li class="name">
-      
-    </li>
-  </ul>
-  <section class="top-bar-section">
-    
-  </section>
-</nav>
-<div class="row ">
-	  <div class="three columns"></div>
-	  <div class="right one column">
-		 <h1><%=yield(:title)%></h1>
-		  </div>
-	  <div class="6 columns"></div>
-</div>
-    <%= yield %>
-
-    
+</nav>    
     <%= javascript_include_tag "application" %>
   </body>
 </html>

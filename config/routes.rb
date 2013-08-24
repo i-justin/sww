@@ -8,6 +8,9 @@ Sww::Application.routes.draw do
   get "about", to: 'pages#about'
   get "contact", to: 'pages#contact'
   get "blog", to: 'pages#blog'
+  get "*path", to: 'pages#home'
+  
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
